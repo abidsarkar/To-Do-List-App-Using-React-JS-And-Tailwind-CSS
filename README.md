@@ -1,3 +1,10 @@
+![alt text](image.png)
+# To Do List App Using React js And Tailwind Css
+This is a clone project from greatStackDev for learn and apply React Js,tailwind as a project
+# Feature
+1. React
+2. Tailwind
+3. Vite
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

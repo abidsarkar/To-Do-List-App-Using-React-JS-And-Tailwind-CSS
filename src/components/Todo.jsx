@@ -1,11 +1,23 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import todo_icon from "../assets/todo_icon.png";
 import TodoItems from "./TodoItems";
 const Todo = () => {
+    const[todoList, setTodoList] = useState([]);
     const inputRef = useRef();
     const add = ()=>{
-        const inputText = inputRef.current.value;
-        console.log(inputText);
+        const inputText = inputRef.current.value.trim();
+        if (inputText==='') {
+            return null;
+        }
+        
+        // console.log(inputText);
+        const newTodo = {
+            id: Date.now(),
+            text: inputText,
+            isComplete: false,
+        }
+        setTodoList((prev)=> [...prev, newTodo]);
+        inputRef.current.value ="";
     }
   return (
     <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl">

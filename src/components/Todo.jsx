@@ -9,7 +9,7 @@ const Todo = () => {
         if (inputText==='') {
             return null;
         }
-        
+
         // console.log(inputText);
         const newTodo = {
             id: Date.now(),
@@ -42,8 +42,11 @@ const Todo = () => {
       </div>
       {/* -----todo list ---- */}
       <div>
-        <TodoItems text={"learn coding"}/>
-        <TodoItems text={"learn coding from abid"}/>
+        {todoList.map((item,index)=>{
+            return <TodoItems key={index} text={item.text}/>
+        })}
+        {/* <TodoItems text={"learn coding"}/>
+        <TodoItems text={"learn coding from abid"}/> */}
       </div>
     </div>
   );

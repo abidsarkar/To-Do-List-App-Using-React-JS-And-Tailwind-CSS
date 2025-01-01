@@ -9,7 +9,7 @@ const TodoItems = () => {
             <img className='w-7' src={tick} alt="" />
             <p className='text-slate-700 ml-4 text-[17px]'>Learn Coding</p>
         </div> 
-           
+        <img className='w-3.5 cursor-pointer' src={delete_icon} alt="" />
     </div>
   )
 }

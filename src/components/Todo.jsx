@@ -26,6 +26,7 @@ const Todo = () => {
       {/* -----todo list ---- */}
       <div>
         <TodoItems/>
+        <TodoItems/>
       </div>
     </div>
   );

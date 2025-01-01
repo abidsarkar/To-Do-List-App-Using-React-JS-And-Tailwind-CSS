@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import todo_icon from "../assets/todo_icon.png";
 import TodoItems from "./TodoItems";
 const Todo = () => {
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : []);
   const inputRef = useRef();
   const add = () => {
     const inputText = inputRef.current.value.trim();
@@ -25,19 +25,20 @@ const Todo = () => {
     });
   };
   const toggle = (id) => {
-    setTodoList((prvTodos)=>{
-        return prvTodos.map((todo)=>{
-            if(todo.id ===id){
-                return {...todo, isComplete: !todo.isComplete}
-            }
-            return todo;
-        })
-    })
+    setTodoList((prvTodos) => {
+      return prvTodos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, isComplete: !todo.isComplete };
+        }
+        return todo;
+      });
+    });
   };
 
-  useEffect(()=>{
+  useEffect(() => {
     // console.log(todoList);
-  },[todoList])
+    localStorage.setItem("todos", JSON.stringify(todoList));
+  }, [todoList]);
   return (
     <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl">
       {/* -----title ---- */}
@@ -73,7 +74,7 @@ const Todo = () => {
               id={item.id}
               isComplete={item.isComplete}
               delateTodo={delateTodo}
-              toggle = {toggle}
+              toggle={toggle}
             />
           );
         })}

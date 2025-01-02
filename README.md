@@ -39,7 +39,7 @@ This is a clone project from greatStackDev for learn and apply React Js,tailwind
    yarn dev
    ```
 
-   This will start a development server (usually on `http://localhost:5173`) and open the project in your browser.
+   This will start a development server (usually on `http://localhost:5173`) and open the project in your browser..
 
 4. **Build for Production**
 

@@ -65,7 +65,7 @@ This version is more concise and better suited for a README.md file. You can fur
 *   Including a section on contributing to the project.
 *   Adding a section on troubleshooting common issues.
 
-I hope this helps!
+I hope this helps!..
 
 # React + Vite
 
